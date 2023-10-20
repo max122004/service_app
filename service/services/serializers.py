@@ -15,6 +15,7 @@ class SubscriptionSerializer(serializers.ModelSerializer):
     email = serializers.CharField(source='client.user.email')
     price = serializers.SerializerMethodField()
 
+    # instance - Subscription
     def get_price(self, instance):
         return instance.price
 
